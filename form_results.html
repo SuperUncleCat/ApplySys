@@ -1,0 +1,75 @@
+<nav class="nav navbar-expand-lg navbar-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMarkup" aria-controls="navMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navMarkup">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-wait-tab" data-toggle="tab" href="#nav-wait" role="tab" aria-controls="nav-wait" aria-selected="true">部門長許可待ち</a>
+      <a class="nav-item nav-link" id="nav-depart-wait-tab" data-toggle="tab" href="#nav-depart-wait" role="tab" aria-controls="nav-depart-wait" aria-selected="false" onclick="departData();">部門長許可済み</a>
+      <a class="nav-item nav-link" id="nav-it-wait-tab" data-toggle="tab" href="#nav-it-wait" role="tab" aria-controls="nav-it-wait" aria-selected="false" onclick="systemData();">システム部承認待ち</a>
+      <a class="nav-item nav-link" id="nav-success-tab" data-toggle="tab" href="#nav-success" role="tab" aria-controls="nav-success" aria-selected="false" onclick="allowedData();">承認済み</a>
+      <a class="nav-item nav-link" id="nav-fail-tab" data-toggle="tab" href="#nav-fail" role="tab" aria-controls="nav-fail" aria-selected="false" onclick="notAllowedData();">不許可</a>
+      <a class="nav-item nav-link" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="false" onclick="allData();">すべて</a>
+      <a class="nav-item nav-link" id="nav-search-tab" data-toggle="tab" href="#nav-search" role="tab" aria-controls="nav-search" aria-selected="false">検索</a>
+    </div>
+  </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-wait" role="tabpanel" aria-labelledby="nav-wait-tab"></div>
+  <div class="tab-pane fade" id="nav-depart-wait" role="tabpanel" aria-labelledby="nav-depart-wait-tab"></div>
+  <div class="tab-pane fade" id="nav-it-wait" role="tabpanel" aria-labelledby="nav-it-wait-tab"></div>
+  <div class="tab-pane fade" id="nav-success" role="tabpanel" aria-labelledby="nav-success-tab"></div>
+  <div class="tab-pane fade" id="nav-fail" role="tabpanel" aria-labelledby="nav-fail-tab"></div>
+  <div class="tab-pane fade" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab"></div>
+  <div class="tab-pane fade" id="nav-search" role="tabpanel" aria-labelledby="nav-search-tab">
+    <div id="searchForm">
+      <div class="form-inline my-2 my-lg-0 p-3">
+        <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
+        <button type="button" id="searchBtn" class="btn btn-outline-info my-2 my-sm-0" onclick="searchedData();">Search</button>
+      </div>
+    </div>
+    <div id="formS"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="reasonCenter" tabindex="-1" role="dialog" aria-labelledby="reasonCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reasonLongTitle">不許可の理由 (必須ではありません)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" id="reasonContent" rows="3"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+        <button type="button" id="modalNotAllow" class="btn btn-outline-danger" data-dismiss="modal">不許可</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="reasonRead" tabindex="-1" role="dialog" aria-labelledby="reasonTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="reasonReadTitle">不許可の理由</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="not-allowed">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>

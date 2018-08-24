@@ -1,0 +1,38 @@
+body {
+    max-width: 100%;
+    height: 100%;
+    /* background: rgba(184, 229, 248) linear-gradient(to right, rgba(222,252,249,0), rgba(195,190,240,.5));
+    transition: background-color .5s; */
+    background-color: #4E678F;
+}
+/* body:hover {
+    background-color: #4E678F;
+} */
+
+.row {margin-top:10%;}
+/* .banner-sec{background:url(../img/forest-haze-landscape-39811.jpg)  repeat 0 0; background-size:cover;} */
+.container{background:#fff; border-radius: 0px; box-shadow:0px 0px 10px 5px rgba(0,0,0,0.1); padding:0 0 0 15px}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color:#FEB58A;}
+.login-sec .copy-text a{color:#E36262;}
+.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #DE6262;}
+.login-sec h2:after{content:" "; width:100px; height:5px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #DE6262; color:#fff; font-weight:600;}
+.banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
+.banner-text h3{color:#fff; font-weight:600;}
+.banner-text h3:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
+.banner-text p{color:#fff;}
+
+@media (max-width: 575.98px) {
+  .banner-sec{
+    display: none;
+  }
+  .container{box-shadow:0px 0px 0px 0px; margin-top: 20px;}
+  body {
+      background:#fff
+  }
+  body:hover {
+      background-color: #fff;
+  }
+}
