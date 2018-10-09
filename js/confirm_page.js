@@ -5,6 +5,8 @@ function confirm(){
     data: {
       val_inputName : this.$val_inputName,
       val_inputDep : this.$val_inputDep,
+      val_inputClass : this.$val_inputClass,
+      val_inputType : this.$val_inputType,
       val_inputReason : this.$val_inputReason,
       val_inputNameKanji : this.$val_inputNameKanji,
       val_inputNameKana : this.$val_inputNameKana,
@@ -18,6 +20,10 @@ function confirm(){
       val_datepicker6 : this.$val_datepicker6,
       val_datepicker7 : this.$val_datepicker7,
       val_datepicker8 : this.$val_datepicker8,
+      val_datepicker9 : this.$val_datepicker9,
+      val_datepicker10 : this.$val_datepicker10,
+      val_datepicker11 : this.$val_datepicker11,
+      val_datepicker12 : this.$val_datepicker12,
       val_datepickerbloomberg : this.$val_datepickerbloomberg,
       val_datepickerreuters : this.$val_datepickerreuters,
       val_foldername : this.$val_foldername,
@@ -91,6 +97,8 @@ function go(){
   $inputName = $("input[name='mustforms[]']");
   $label_inputName = $('label[for="inputName"]').html().trim();
   $label_inputDep = $('label[for="inputDep"]').html().trim();
+  $label_inputClass = $('label[for="inputClass"]').html().trim();
+  $label_inputType = $('label[for="inputType"]').html().trim();
   $label_inputReason = $('label[for="inputReason"]').html().trim();
   $label_inputNameKanji = $('label[for="inputNameKanji"]').html().trim();
   $label_inputNameKana = $('label[for="inputNameKana"]').html().trim();
@@ -104,6 +112,10 @@ function go(){
   $label_datepicker6 = $('label[for="datepicker6"]').html().trim();
   $label_datepicker7 = $('label[for="datepicker7"]').html().trim();
   $label_datepicker8 = $('label[for="datepicker8"]').html().trim();
+  $label_datepicker9 = $('label[for="datepicker9"]').html().trim();
+  $label_datepicker10 = $('label[for="datepicker10"]').html().trim();
+  $label_datepicker11 = $('label[for="datepicker11"]').html().trim();
+  $label_datepicker12 = $('label[for="datepicker12"]').html().trim();
   $label_datepickerbloomberg = $('label[for="datepickerbloomberg"]').html().trim();
   $label_datepickerreuters = $('label[for="datepickerreuters"]').html().trim();
   $label_foldername = $('label[for="foldername"]').html().trim();
@@ -115,6 +127,8 @@ function go(){
   $label_mailItem = $('label[for="mailItem"]').html().trim();
   $val_inputName = $("#inputName").val();
   $val_inputDep = $("#inputDep").val();
+  $val_inputClass = $("#inputClass").val();
+  $val_inputType = $("#inputType").val();
   $val_inputReason = $("#inputReason").val();
   $val_inputNameKanji = $("#inputNameKanji").val();
   $val_inputNameKana = $("#inputNameKana").val();
@@ -128,6 +142,10 @@ function go(){
   $val_datepicker6 = $("#datepicker6").val();
   $val_datepicker7 = $("#datepicker7").val();
   $val_datepicker8 = $("#datepicker8").val();
+  $val_datepicker9 = $("#datepicker9").val();
+  $val_datepicker10 = $("#datepicker10").val();
+  $val_datepicker11 = $("#datepicker11").val();
+  $val_datepicker12 = $("#datepicker12").val();
   $val_datepickerbloomberg = $("#datepickerbloomberg").val();
   $val_datepickerreuters = $("#datepickerreuters").val();
   $val_foldername = $("#foldername").val();
@@ -153,7 +171,7 @@ function go(){
     case '経営企画室':
       $val_adminNum = 5;
       break;
-    case 'セミナー':
+    case 'セミナー事業部':
       $val_adminNum = 6;
       break;
     case '人事本部':
@@ -171,7 +189,7 @@ function go(){
     case 'コンプライアンス部':
       $val_adminNum = 11;
       break;
-    case 'カスタマーサポート部':
+    case 'カスタマー事業部':
       $val_adminNum = 12;
       break;
     case '管理本部':
@@ -180,7 +198,7 @@ function go(){
     case '証券営業部':
       $val_adminNum = 14;
       break;
-    case '研修センター':
+    case '内部監査':
       $val_adminNum = 15;
       break;
     default:
@@ -232,6 +250,24 @@ function go(){
       }
       if($val_inputDep){
         $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_inputDep + ' : ' + "</label><span class='col-sm-9'>" + $val_inputDep + "</span></p>");
+      }
+      if($val_inputClass){
+        $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_inputClass + ' : ' + "</label><span class='col-sm-9'>" + $val_inputClass + "</span></p>");
+      }
+      if($val_datepicker9){
+        $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_datepicker9 + ' : ' + "</label><span class='col-sm-9'>" + $val_datepicker9 + "</span></p>");
+      }
+      if($val_datepicker10){
+        $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_datepicker10 + ' : ' + "</label><span class='col-sm-9'>" + $val_datepicker10 + "</span></p>");
+      }
+      if($val_datepicker11){
+        $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_datepicker11 + ' : ' + "</label><span class='col-sm-9'>" + $val_datepicker11 + "</span></p>");
+      }
+      if($val_datepicker12){
+        $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_datepicker12 + ' : ' + "</label><span class='col-sm-9'>" + $val_datepicker12 + "</span></p>");
+      }
+      if($val_inputType){
+        $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_inputType + ' : ' + "</label><span class='col-sm-9'>" + $val_inputType + "</span></p>");
       }
       if($val_inputReason){
         $wrap.append("<p class='card-text mt-1'>" + "<label class='col-sm-3 col-form-label'>" + $label_inputReason + ' : ' + "</label><span class='col-sm-9'>" + $val_inputReason + "</span></p>");

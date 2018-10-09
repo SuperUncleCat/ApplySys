@@ -8,7 +8,7 @@
   include 'conn.php';
   $admin_num = $_SESSION['admin'];
   $arr = array();
-  $sql_all = "select * from apply_form where admin_num='$admin_num' order by `updated_at` desc limit 100";
+  $sql_all = "select * from apply_form where admin_num='$admin_num' order by `updated_at` desc limit 50";
 
   try {
     $all = $pdo->prepare($sql_all);

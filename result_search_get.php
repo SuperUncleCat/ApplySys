@@ -12,10 +12,12 @@
   $search=$_POST['searchName'];
   if($admin_identity==1){
     $sql_search = "select * from apply_form where `user_name` like :keyword order by `updated_at`,`id` desc";
-  }else if($admin_num!==0&&$admin_identity==0){
+  }else if($admin_num!==0&&$admin_identity==0&&$admin_num!==16){
     $sql_search = "select * from apply_form where admin_num='$admin_num' and `user_name` like :keyword order by `updated_at`,`id` desc";
   }else if($admin_num==0){
     $sql_search = "select * from apply_form where user_id='$user_id' and `user_name` like :keyword order by `updated_at`,`id` desc";
+  }else if($admin_num==16){
+    $sql_search = "select * from apply_form where `user_name` like :keyword order by `updated_at`,`id` desc";
   }
 
   try {

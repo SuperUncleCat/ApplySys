@@ -11,17 +11,23 @@ $(function(){
     highlight: function(element, errorClass) {
       $(element).fadeOut(function() {
         $(element).fadeIn();
-        $(element).addClass("error alert-danger");
+        $(element).removeClass('has-success').addClass('has-error error');
       });
     },
     unhighlight: function(element, errorClass) {
-      $(element).removeClass("error alert-danger");
+      $(element).removeClass('has-error error').addClass('has-success');
     },
     rules:{
       inputName:{
         required:true
       },
       inputDep:{
+        required:true
+      },
+      inputClass:{
+        required:true
+      },
+      inputType:{
         required:true
       },
       inputNameKanji:{
@@ -38,28 +44,39 @@ $(function(){
       },
       datepicker:{
         required:true,
-        date : true
+        date: true
       },
       datepicker2:{
-        required:true
+        required:true,
+        date: true
       },
       datepicker3:{
-        required:true
+        required:true,
+        date: true
       },
       datepicker4:{
-        required:true
+        required:true,
+        date: true
       },
       datepicker5:{
-        required:true
+        required:true,
+        date: true
       },
       datepicker6:{
-        required:true
+        required:true,
+        date: true
       },
       datepicker7:{
-        required:true
+        required:true,
+        date: true
       },
       datepicker8:{
-        required:true
+        required:true,
+        date: true
+      },
+      datepicker9:{
+        required:true,
+        date: true
       },
       datepickerbloomberg:{
         required:true
@@ -90,6 +107,9 @@ $(function(){
       },
       "forms[]":{
         required:true
+      },
+      messages:{
+
       }
     },
     messages: {

@@ -8,7 +8,7 @@
   include 'conn.php';
 
   $arr = array();
-  $sql_all = "select * from apply_form order by `updated_at` desc limit 100";
+  $sql_all = "select * from apply_form order by `updated_at` desc limit 50";
 
   try {
     $all = $pdo->prepare($sql_all);

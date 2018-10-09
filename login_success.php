@@ -1,6 +1,8 @@
 <?php
   header("Content-type:text/html;charset=gbk");
-
+  // require_once 'ldap_traits.php';
+  // $ldaprdn = "a_system";
+  // $ldappass = "Db9NF54m";
   if(isset($_POST["username"])){
     $ldaprdn = $_POST["username"]?$_POST["username"]:" ";
   }else{
@@ -13,9 +15,9 @@
 
   }
 
-  $ldaphost = "192.168.xxx.x";
+  $ldaphost = "192.168.200.4";
   $ldapport = 389;
-  $domain = '@domain.com.local';
+  $domain = '@sec-efx.com.local';
   $ldapconn = ldap_connect($ldaphost,$ldapport) or die("Could not connect to $ldaphost");
 
   if(!$ldapconn){
@@ -35,14 +37,29 @@
             session_start();
             $_SESSION['username'] = $_POST['username'];
             switch ($_SESSION['username']) {
-              
+              case 'h-zhang':
+                $_SESSION['admin'] = 1;
+                $_SESSION['it'] = 1;
+                break;
+              case 'test_A':
+                $_SESSION['admin'] = 16;
+                $_SESSION['it'] = 0;
+                break;
+              case 'test_B':
+                $_SESSION['admin'] = 7;
+                $_SESSION['it'] = 0;
+                break;
+              case 'a_system':
+                $_SESSION['admin'] = 0;
+                $_SESSION['it'] = 0;
+                break;
               case 'sys-admin':
                 $_SESSION['admin'] = 1;
-                $_SESSION['it'] = 0;
+                $_SESSION['it'] = 1;
                 break;
               case 'it-admin':
                 $_SESSION['admin'] = 1;
-                $_SESSION['it'] = 1;
+                $_SESSION['it'] = 0;
                 break;
               case 'hisho-admin':
                 $_SESSION['admin'] = 2;
@@ -96,17 +113,20 @@
                 $_SESSION['admin'] = 14;
                 $_SESSION['it'] = 0;
                 break;
-              case 'kenshu-admin':
+              case 'kannsa-admin':
                 $_SESSION['admin'] = 15;
                 $_SESSION['it'] = 0;
                 break;
+                case 'ceo-admin':
+                  $_SESSION['admin'] = 16;
+                  $_SESSION['it'] = 0;
+                  break;
               default:
                 $_SESSION['admin'] = 0;
                 $_SESSION['it'] = 0;
                 break;
             }
-
-            $home_url = 'index.php';
+            $home_url = 'results.php';
             header('Location: '.$home_url);
         } else {
           $home_url = 'login.html';

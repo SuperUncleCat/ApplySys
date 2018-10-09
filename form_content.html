@@ -6,7 +6,7 @@
         <h5 class="mb-0">
           <div class="custom-control custom-checkbox btn-link">
             <input type="checkbox" name="comCheck" class="custom-control-input" id="comCheck" data-toggle="collapse" data-target="#collapseCom" aria-expanded="true" aria-controls="collapseCom" value="必須項目" checked disabled>
-            <label class="custom-control-label" for="comCheck">必須項目</label>
+            <label class="custom-control-label" for="comCheck">情報登録</label>
           </div>
         </h5>
       </div>
@@ -21,7 +21,6 @@
             <div class="form-group row">
               <label for="inputDep" class="col-sm-2 col-form-label">部署</label>
               <div class="col-sm-10">
-                <!-- <input type="text" name="inputDep" class="form-control" id="inputDep" placeholder="例:システム"> -->
                 <select class="custom-select my-1 mr-sm-2" name="inputDep" id="inputDep">
                   <option value="" disabled selected>例:IT事業戦略室</option>
                   <option value="IT事業戦略室">IT事業戦略室</option>
@@ -29,21 +28,64 @@
                   <option value="管理部">管理部</option>
                   <option value="金融商品開発室">金融商品開発室</option>
                   <option value="経営企画室">経営企画室</option>
-                  <option value="セミナー">セミナー</option>
+                  <option value="セミナー">セミナー事業部</option>
                   <option value="人事本部">人事本部</option>
                   <option value="労務課">労務課</option>
                   <option value="総務部">総務部</option>
                   <option value="経理課">経理課</option>
                   <option value="コンプライアンス部">コンプライアンス部</option>
-                  <option value="カスタマーサポート部">カスタマーサポート部</option>
+                  <option value="カスタマー事業部">カスタマー事業部</option>
                   <option value="管理本部">管理本部</option>
                   <option value="証券営業部">証券営業部</option>
-                  <option value="研修センター">研修センター</option>
+                  <option value="内部監査">内部監査</option>
                 </select>
               </div>
             </div>
             <div class="form-group row">
-              <label for="inputReason" class="col-sm-2 col-form-label">申請理由</label>
+              <label for="inputClass" class="col-sm-2 col-form-label">分類</label>
+              <div class="col-sm-10">
+                <select class="custom-select my-1 mr-sm-2" name="inputClass" id="inputClass">
+                  <option value="" disabled selected>例:新規登録</option>
+                  <option value="新入社員">新入社員</option>
+                  <option value="新規登録">新規登録</option>
+                  <option value="廃止">廃止</option>
+                  <option value="異動">異動</option>
+                  <option value="休止">休止</option>
+                  <!-- <option value="その他">その他</option> -->
+                </select>
+              </div>
+            </div>
+            <div class='form-group row regis' id="regis1">
+              <label for='datepicker9' class='col-sm-2 col-form-label'>入社日</label>
+              <div class='col-sm-10'><input type='text' name='datepicker9' class='form-control' id='datepicker9' placeholder='Date' readonly></div>
+            </div>
+            <div class='form-group row regis' id="regis2">
+              <label for='datepicker10' class='col-sm-2 col-form-label'>退社日</label>
+              <div class='col-sm-10'><input type='text' name='datepicker10' class='form-control' id='datepicker10' placeholder='Date' readonly></div>
+            </div>
+            <div class='form-group row regis' id="regis3">
+              <label for='datepicker11' class='col-sm-2 col-form-label'>異動日</label>
+              <div class='col-sm-10'><input type='text' name='datepicker11' class='form-control' id='datepicker11' placeholder='Date' readonly></div>
+            </div>
+            <div class='form-group row regis' id="regis4">
+              <label for='datepicker12' class='col-sm-2 col-form-label'>休止日</label>
+              <div class='col-sm-10'><input type='text' name='datepicker12' class='form-control' id='datepicker12' placeholder='Date' readonly></div>
+            </div>
+            <div class="form-group row">
+              <label for="inputType" class="col-sm-2 col-form-label">社員カテゴリー</label>
+              <div class="col-sm-10">
+                <select class="custom-select my-1 mr-sm-2" name="inputType" id="inputType">
+                  <option value="" disabled selected>例:正社員</option>
+                  <option value="正社員">正社員</option>
+                  <option value="出向社員">出向社員</option>
+                  <option value="派遣社員">派遣社員</option>
+                  <option value="アルバイト(短期)">アルバイト(短期)</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputReason" class="col-sm-2 col-form-label">依頼特記事項</label>
               <div class="col-sm-10">
                 <textarea class="form-control" id="inputReason" rows="3" placeholder="必須ではありません。理由等ございましたら、50文字以内でお記入ください。"></textarea>
               </div>
@@ -100,7 +142,7 @@
                   <div class="form-group row">
                     <label for="datepicker" class="col-sm-2 col-form-label">開始日</label>
                     <div class="col-sm-10">
-                      <input type="text" name="datepicker" class="form-control" id="datepicker" name="datepicker" placeholder="Date" readonly>
+                      <input type="text" name="datepicker" class="form-control" id="datepicker" placeholder="Date" readonly>
                     </div>
                   </div>
               </div>
@@ -443,10 +485,8 @@
     </div>
     <div class="form-error alert-danger text-center"></div>
     <div class="panel panel-default mt-3 text-center">
-      <!-- <button type="submit" class="btn btn-primary btn-circle" value="Submit">Submit</button>
-      <button type="reset" class="btn btn-outline-primary  btn-circle" value="Reset">Reset</button> -->
       <div class="panel-body">
-        <button type="button" class="btn btn-info btn-circle btn-xl btn-space" value="Submit" onclick="go()"><i class="fa fa-check"></i></button>
+        <button type="button" class="btn btn-info btn-circle btn-xl btn-space" value="Submit" onclick="gocheck()"><i class="fa fa-check"></i></button>
         <button type="button" class="btn btn-warning btn-circle btn-xl" value="Reset" onclick="reload();"><i class="fa fa-times"></i></button>
       </div>
     </div>

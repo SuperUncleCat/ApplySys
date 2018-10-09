@@ -9,5 +9,5 @@
 <script src="js/required_logic.js"></script>
 <script src="js/confirm_page.js"></script>
 <script src="js/slide_logic.js"></script>
-<script src="js/<?php if(($_SESSION['admin']==0)&&($_SESSION['it']==0))echo 'user_record.js';else if($_SESSION['it']==0) echo 'result_show.js';else echo 'sys_record.js';?>"></script>
+<script src="js/<?php if($_SESSION['admin']==0 && $_SESSION['it']==0)echo 'user_record.js';else if($_SESSION['it']==0 && $_SESSION['admin']!==16 && $_SESSION['admin']!==7) echo 'admin_record.js';else if($_SESSION['admin']==7) echo 'hr_record.js';else if($_SESSION['admin']==16) echo 'ceo_record.js';else if($_SESSION['it']==1) echo 'sys_record.js';?>"></script>
 </html>
